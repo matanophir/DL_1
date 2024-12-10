@@ -32,7 +32,7 @@ during the cross-validation process, the validation set is used to tune the hype
 
 part1_q2 = r"""
 **Your answer:**
-It may seems logical but it is bad parctice to use the test set to tune the hyperparameters.\
+It may seems logical but it is bad practice to use the test set to tune the hyperparameters.\
 If we use the test set to tune the hyperparameters they cease being truly unseen, hence we wouldn't get a good estimate of the generalization error.\
 """
 
@@ -44,7 +44,8 @@ part2_q1 = r"""
 
 The $\Delta$ parameter is a hyperparameter the control the minimum amount we want the right answer's score to be bigger than the rest.\
 can be thought of as the amount of certainty we want our model to predict with.\
-If we allow $\Delta < 0$ we will not incur loss when the prediction is wrong, i.e not representing our goal correctly.
+If we allow $\Delta < 0$ we will not incur loss when the prediction is wrong, i.e not representing our goal correctly.\
+If we set $\Delta > 0$ we are implying we want the correct label to get a score that is at least higher than the rest by $\Delta$
 
 """
 

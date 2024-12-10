@@ -244,6 +244,7 @@ def cv_best_hyperparams(
     #  - You can use MSE or R^2 as a score.
 
     # ====== YOUR CODE: ======
+
     from itertools import product
     all_params = list(product(degree_range, lambda_range))
     best_score = np.inf
@@ -265,6 +266,12 @@ def cv_best_hyperparams(
             best_params = model.get_params()
 
 
+    # # could've just used GridSearchCV but needed to change mse_sore func..
+    # from sklearn.model_selection import GridSearchCV
+    # param_grid = {'bostonfeaturestransformer__degree': degree_range, 'linearregressor__reg_lambda': lambda_range}
+    # grid_search = GridSearchCV(model, param_grid, cv=k_folds, scoring='neg_mean_squared_error')
+    # grid_search.fit(X, y)
+    # best_params = grid_search.best_params_
     # ========================
 
     return best_params
