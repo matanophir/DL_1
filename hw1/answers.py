@@ -32,7 +32,7 @@ during the cross-validation process, the validation set is used to tune the hype
 
 part1_q2 = r"""
 **Your answer:**
-It may seems logical but it is bad practice to use the test set to tune the hyperparameters.\
+It may seems logical but it is bad practice and actually wrong to use the test set to tune the hyperparameters.\
 If we use the test set to tune the hyperparameters they cease being truly unseen, hence we wouldn't get a good estimate of the generalization error.\
 """
 
@@ -99,7 +99,7 @@ Worth noting that the projection of the hyperplane to the original feature space
 part3_q3 = r"""
 **Your answer:**
 1. The logspace will give wider range of values to test with fewer values.\
-So the cros validation process will be fast while coviring a wide range of values.\
+So the cross validation process will be fast while covering a wide range of values.\
 
 2. the data was fitted |degree_range $\times$ lambda_range| * k_folds times.\
 

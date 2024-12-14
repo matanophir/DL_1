@@ -299,6 +299,7 @@ def prepare_submission(hw_dir, out_dir, submitter_ids, skip_run, **kwargs):
 
     # 2. Run nbnmerge to merge them
     nb_merged = os.path.join(hw_dir, f"{submission_name}.ipynb")
+    print (nb_paths)
     jupyter_utils.nbmerge(nb_paths, nb_merged)
 
     # 3. Run nbconvert to convert the merged notebook to html
