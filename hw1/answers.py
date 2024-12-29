@@ -25,9 +25,9 @@ The test set should only be used to test the generalization of the model and not
 \
 \
 4. True.\
-Validation set performance can be used to estimate the generalization error of the model, but it cannot replace the check with the test set.\
-during the cross-validation process, the validation set is used to tune the hyperparameters so the validation set is not truly unseen data, so unfit to truly estimate the generalization error.\
-
+In each "iteration" of cross-validation, the corresponding fold is treated as validation set and isn't being trained on.\
+With this logic in mind, this out-of-sample error would indeed indicate about the model's generalization error.\
+However, it's worth mentioning it's not a replacement for the test set. The validation is used to tune hyperparameters for example and isn't truly unseen data. Generalization error isn't given by the validation set but an estimation for it does.\
 """
 
 part1_q2 = r"""
@@ -60,7 +60,7 @@ Many of the classification errors happened on samples which are not well defined
 part2_q3 = r"""
 **Your answer:**
 
-1. I would say that the learning rate is good-lowish, because it's not clear whether we reach a loss plateau. \
+1. We would say that the learning rate is good-lowish, because it's not clear whether we reach a loss plateau. \
 - If it was too low we would see that the process was halted without reaching a plateau loss wise.\
 - If it was too high we would see that the loss probably sharply decrease and then oscillates around the minimum.\
 - With a good learning rate we see that the loss is decreasing steadily and plateauing.\
@@ -98,8 +98,9 @@ Worth noting that the projection of the hyperplane to the original feature space
 
 part3_q3 = r"""
 **Your answer:**
-1. The logspace will give wider range of values to test with fewer values.\
-So the cross validation process will be fast while covering a wide range of values.\
+
+1.The logspace will give wider range of values and the lambda values themselves would be much more different and diverse compared to linspace (evenly spaced lambda values).\
+Too similar lambda values might not provide much insights.
 
 2. the data was fitted |degree_range $\times$ lambda_range| * k_folds times.\
 
